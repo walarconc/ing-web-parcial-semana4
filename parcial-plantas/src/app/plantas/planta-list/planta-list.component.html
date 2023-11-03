@@ -13,9 +13,11 @@
   <tbody>
   <tr *ngFor="let planta of plantas; index as i">
     <th scope="row">{{ i + 1 }}</th>
-    <td>{{ planta.id | number }}</td>
     <td>{{ planta.nombre_comun }}</td>
+    <td>{{ planta.tipo }}</td>
     <td>{{ planta.clima }}</td>
   </tr>
   </tbody>
 </table>
+<div>Total plantas de interior: {{interior}}</div>
+<div>Total plantas de exterior: {{exterior}}</div>

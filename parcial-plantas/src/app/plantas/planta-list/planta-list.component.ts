@@ -10,6 +10,8 @@ import {PlantaService} from "../planta.service";
 export class PlantaListComponent {
 
   plantas: Array<Planta> = [];
+  interior: number = 0;
+  exterior: number = 0;
   constructor(private plantaService: PlantaService) { }
 
   ngOnInit(): void {
@@ -19,6 +21,8 @@ export class PlantaListComponent {
   obtenerPlantas(): void {
     this.plantaService.obtenerPlantas().subscribe((plantas) => {
       this.plantas = plantas;
+      this.interior =  this.plantas.filter(p => p.tipo === 'Interior').length;
+      this.exterior =  this.plantas.filter(p => p.tipo === 'Exterior').length;
     });
   }
 }
