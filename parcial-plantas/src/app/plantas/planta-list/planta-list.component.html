@@ -1,1 +1,21 @@
-<p>planta-list works!</p>
+<h5>Vivero El Otoño</h5>
+<hr>
+<img src="assets/vivero.png">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nombre Común</th>
+    <th scope="col">Tipo</th>
+    <th scope="col">Clima</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let planta of plantas; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ planta.id | number }}</td>
+    <td>{{ planta.nombre_comun }}</td>
+    <td>{{ planta.clima }}</td>
+  </tr>
+  </tbody>
+</table>
